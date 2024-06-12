@@ -25,7 +25,7 @@ export default class Doodler implements IDoodler {
     dy: number;
     gravity: number;
 
-    constructor(img: string, xpose: number, ypose: number, width: number, height: number, dy: number) {
+    constructor(img: string, xpose: number, ypose: number, width: number, height: number) {
         this.img = img;
         this.width = width;
         this.height = height;

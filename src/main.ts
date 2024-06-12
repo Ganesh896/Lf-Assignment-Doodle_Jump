@@ -43,7 +43,7 @@ function gameOver() {
     ctx.fillText(`Press Enter to Restart the game`, 110, canvas.height / 2 + 120);
 }
 
-const doodler = new Doodler(doodlerRightImg, canvas.width / 2 - DOODLER__WIDTH / 2, (canvas.height * 7) / 8, DOODLER__WIDTH, DOODLER__HEIGHT, 8);
+const doodler = new Doodler(doodlerRightImg, canvas.width / 2 - DOODLER__WIDTH / 2, (canvas.height * 7) / 8, DOODLER__WIDTH, DOODLER__HEIGHT);
 
 let moveRight = false;
 let moveLeft = false;
@@ -72,16 +72,16 @@ const platformImg = "./images/platform.png";
 const platforms: Platform[] = [];
 for (let i = 0; i < 20; i++) {
     const randX = generateRandomNumber(0, canvas.width - PLATFORM__WIDTH);
-    platforms.push(new Platform(platformImg, randX, canvas.height - 75 * i - 150, PLATFORM__WIDTH, PLATFORM__HEIGHT, 8));
+    platforms.push(new Platform(platformImg, randX, canvas.height - 75 * i - 150, PLATFORM__WIDTH, PLATFORM__HEIGHT));
 }
 
 const addPlatforms = function () {
     const randX = generateRandomNumber(0, canvas.width - PLATFORM__WIDTH);
-    platforms.push(new Platform(platformImg, randX, -canvas.height - 150, PLATFORM__WIDTH, PLATFORM__HEIGHT, 8));
+    platforms.push(new Platform(platformImg, randX, -canvas.height - 150, PLATFORM__WIDTH, PLATFORM__HEIGHT));
     currentScore += platform.height + 150; //distance covered = height of all passed platforms + gap between platform
 };
 
-const platform = new Platform(platformImg, canvas.width / 2 - PLATFORM__WIDTH / 2, canvas.height + 250, PLATFORM__WIDTH, PLATFORM__HEIGHT, 8);
+const platform = new Platform(platformImg, canvas.width / 2 - PLATFORM__WIDTH / 2, canvas.height + 250, PLATFORM__WIDTH, PLATFORM__HEIGHT);
 platforms.push(platform);
 
 const animate = function () {
