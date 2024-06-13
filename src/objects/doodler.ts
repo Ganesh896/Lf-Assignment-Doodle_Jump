@@ -59,6 +59,10 @@ export default class Doodler implements IDoodler {
         if (this.xpose > DIMENSIONS.CANVAS__WIDHT) {
             this.xpose = 0;
         }
+
+        if (this.ypose < DIMENSIONS.CANVAS__HEIGHT / 2) {
+            this.ypose = DIMENSIONS.CANVAS__HEIGHT / 2;
+        }
         this.draw();
     }
 }
